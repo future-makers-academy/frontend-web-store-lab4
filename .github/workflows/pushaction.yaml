@@ -24,4 +24,4 @@ jobs:
         run: docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_TOKEN}}
 
       - name: Push the docker to dockerhub ;)
-        run: docker push akamprogramist/service-web-store-lab4:akamprogramist/service-web-store-lab4
+        run: docker push akamprogramist/service-web-store-lab4:akamprogramist/service-web-store-lab4 .
