@@ -1,5 +1,4 @@
 name: learning docker
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branch:
@@ -13,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: action/setup-node@v2
+        uses: action/setup-node@v1
         with:
           node-version: "14"
 
