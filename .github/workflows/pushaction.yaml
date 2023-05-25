@@ -1,0 +1,26 @@
+name: learning docker
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branch: -testing-pipeline
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout our repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: action/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Build the Docker Image :)
+        run: docker build -t akamprogramist/service-web-store-lab4:akamprogramist/service-web-store-lab4 .
+
+      - name: Log in to the Docker hub
+        run: docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_TOKEN}}
+
+      - name: Push the docker to dockerhub ;)
+        run: docker push akamprogramist/service-web-store-lab4:akamprogramist/service-web-store-lab4
