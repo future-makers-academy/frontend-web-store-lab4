@@ -2,7 +2,8 @@ name: learning docker
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    branch: testing-pipeline
+    branch:
+      - testing-pipeline
 jobs:
   build:
     runs-on: ubuntu-latest
